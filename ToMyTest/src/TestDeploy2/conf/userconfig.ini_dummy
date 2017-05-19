@@ -1,0 +1,11 @@
+' リポジトリのHOMEディレクトリ
+REPOSITORY_HOME=C:\repos\salesforce
+
+' ソース取得対象developブランチ
+DEVELOP_BRANCH=shinagawa
+
+' 最新コミット番号ファイル
+' 　ここは各拠点ごとに特定のコミット番号管理用ファイルを指定してください。
+' 　品川では下記パスのファイルでコミット番号を管理しています。
+HEAD_COMMIT=C:\dep\deploy\dummy_commit\.commit
+
