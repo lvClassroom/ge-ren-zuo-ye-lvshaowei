@@ -1,0 +1,51 @@
+<project name="Sample usage of Salesforce Ant tasks" default="deployCode" basedir="." xmlns:sf="antlib:com.salesforce">
+
+	<property file="build.properties"/>
+	<property environment="env"/>
+	
+	<target name="deployCodeCheckOnly">
+		<sf:deploy username="${sf.username}" password="${sf.password}" serverurl="${sf.serverurl}" deployRoot="../codepkg" maxPoll ="${sf.maxPoll}" checkOnly="true">
+		</sf:deploy>
+	</target>
+
+	<target name="deployCode">
+		<sf:deploy username="${sf.username}" password="${sf.password}" serverurl="${sf.serverurl}" deployRoot="../codepkg" maxPoll ="${sf.maxPoll}">
+		</sf:deploy>
+	</target>
+	
+	<target name="undeployCode">
+		<sf:deploy username="${sf.username}" password="${sf.password}" serverurl="${sf.serverurl}" deployRoot="../removecodepkg" maxPoll="${sf.maxPoll}">
+		</sf:deploy>
+	</target>
+	
+	<!-- 差分デプロイ -->
+    <target name="incrementalDeploy">
+        <sf:deploy username="${sf.username}" password="${sf.password}" serverurl="${sf.serverurl}" deployRoot="../codepkg" maxPoll="${sf.maxPoll}" testLevel="RunSpecifiedTests" >
+            <!-- デプロイするコードに関するテストクラスを指定する -->
+            <runTest>StoreClaimBeforeInsertTest</runTest>
+            <runTest>StoreClaimBeforeUpdateTest</runTest>
+            <runTest>StoreClaimTriggerTest</runTest>
+        </sf:deploy>
+    </target>
+   
+   <!-- 差分デプロイ 検証 -->
+    <target name="incrementalDeployCheckOnly">
+        <sf:deploy username="${sf.username}" password="${sf.password}" serverurl="${sf.serverurl}" deployRoot="../codepkg" maxPoll="${sf.maxPoll}" testLevel="RunSpecifiedTests" checkOnly="true" >
+            <!-- デプロイするコードに関するテストクラスを指定する -->
+            <runTest>AttachmentLogicTest</runTest>
+            <runTest>AttachmentTriggerTest</runTest>
+            <runTest>ContactDaoTest</runTest>
+            <runTest>EccOrderBeforeInsertTest</runTest>
+            <runTest>EccOrderManagerTest</runTest>
+            <runTest>EventAfterInsertTest</runTest>
+            <runTest>MailDialogueTriggerTest</runTest>
+            <runTest>MailDialogueManagerTest</runTest>
+            <runTest>MailLinkHandlerForWebAPITest</runTest>
+            <runTest>MailLinkHandlerForSupportOpeTest</runTest>
+            <runTest>MailLinkHandlerForSupportSocialTest</runTest>
+            <runTest>MailDialogueDaoTest</runTest>
+            <runTest>UserUtilTest</runTest>
+        </sf:deploy>
+    </target>
+    
+</project>

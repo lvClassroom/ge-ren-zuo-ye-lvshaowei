@@ -1,0 +1,27 @@
+Unable to locate tools.jar. Expected to find it in C:\Program Files\Java\jre1.8.0_25\lib\tools.jar
+Buildfile: C:\deploy\conf\build.xml
+
+incrementalDeployCheckOnly:
+[sf:deploy] Request for a deploy submitted successfully.
+[sf:deploy] Request ID for the current deploy task: 0Af5F000001LkptSAC
+[sf:deploy] Waiting for server to finish processing the request...
+[sf:deploy] Request Status: Pending
+[sf:deploy] Request Status: InProgress
+[sf:deploy] Request Status: InProgress  -- 処理種別: ApexTrigger
+[sf:deploy] Request Status: InProgress
+[sf:deploy] Request Status: InProgress
+[sf:deploy] Request Status: InProgress
+[sf:deploy] Request Status: InProgress
+[sf:deploy] Request Status: InProgress
+[sf:deploy] Request Status: InProgress
+[sf:deploy] Request Status: InProgress
+[sf:deploy] Request Status: InProgress  -- 実行中のテスト: testContractChangeHistoryBeforeInsert.ganbareRevivalTest
+[sf:deploy] Request Status: InProgress  -- 実行中のテスト: testContractChangeHistoryBeforeInsert.testTrigger
+[sf:deploy] Request Status: InProgress  -- 実行中のテスト: testContractChangeHistoryBeforeInsert.validChangePlanTest
+[sf:deploy] Request Status: InProgress  -- 実行中のテスト: testContractChangeHistoryBeforeInsert.validPlanWithCountryCodeInvalidMsgTest
+[sf:deploy] Request Status: Succeeded
+[sf:deploy] *********** DEPLOYMENT SUCCEEDED ***********
+[sf:deploy] Finished request 0Af5F000001LkptSAC successfully.
+
+BUILD SUCCESSFUL
+Total time: 2 minutes 23 seconds
