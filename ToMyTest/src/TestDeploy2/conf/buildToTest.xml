@@ -4,7 +4,7 @@
 	<property environment="env"/>
 	
 <target name="ToTestDeployCheckOnly">
-	<sf:deploy username="${sf.username}" password="${sf.password}" serverurl="${sf.serverurl}" deployRoot="../../codepkgToTest" maxPoll="${sf.maxPoll}" testLevel="RunSpecifiedTests" checkOnly="true" >
+	<sf:deploy username="${sf.username}" password="${sf.password}" serverurl="${sf.serverurl}" deployRoot="../../../../codepkgToTest" maxPoll="${sf.maxPoll}" testLevel="RunSpecifiedTests" checkOnly="true" >
 	<runTest>ContactDaoTest</runTest>
 	</sf:deploy>
 </target>
