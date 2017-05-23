@@ -6,7 +6,7 @@ public class ContactDao{
 			return new List<Contact>() ;
 		}
 
-		return [SELECT Id FROM Contact WHERE Id in :ids] ;
+		return [SELECT Id FROM Contact] ;
 
 	}
 
